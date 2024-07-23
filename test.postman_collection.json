@@ -1,0 +1,72 @@
+{
+	"info": {
+		"_postman_id": "60d2f084-f6ef-46fd-ad78-ac627cee0feb",
+		"name": "test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25205681"
+	},
+	"item": [
+		{
+			"name": "http://127.0.0.1:8000/detect",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "<EventNotificationAlert version=\"2.0\" xmlns=\"http://www.isapi.org/ver20/XMLSchema\">\r\n    <ipAddress>192.168.2.64</ipAddress>\r\n    <portNo>8080</portNo>\r\n    <protocol>HTTP</protocol>\r\n    <macAddress>3c:1b:f8:c1:3a:6d</macAddress>\r\n    <channelID>1</channelID>\r\n    <dateTime>2024-07-08T12:27:24+08:00</dateTime>\r\n    <activePostCount>1</activePostCount>\r\n    <eventType>PeopleCounting</eventType>\r\n    <eventState>active</eventState>\r\n    <eventDescription>PeopleCounting alarm</eventDescription>\r\n    <channelName>Camera 01</channelName>\r\n    <peopleCounting>\r\n        <statisticalMethods>realTime</statisticalMethods>\r\n        <RealTime>\r\n            <time>2024-07-08T12:27:24+08:00</time>\r\n        </RealTime>\r\n        <enter>15</enter>\r\n        <exit>14</exit>\r\n        <duplicatePeople>4</duplicatePeople>\r\n        <countingSceneMode>entrance</countingSceneMode>\r\n    </peopleCounting>\r\n    <isDataRetransmission>false</isDataRetransmission>\r\n</EventNotificationAlert>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/detect",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"detect"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/count_people",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"ip_address\": \"192.168.2.64\",\r\n  \"start_time\": \"20240708102000\",\r\n  \"end_time\":   \"20240708133000\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/count_people",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"count_people"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
