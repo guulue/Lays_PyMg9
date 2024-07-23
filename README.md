@@ -14,7 +14,7 @@ this project use mongoDB on server mongoDB in Atlas Cloud
    - pip install pydantic
 
 3 start app by run command from CMD
-  - uvicorn app.main:main --reload
+  - uvicorn app.main:app --reload
 
 4 app start at http://127.0.0.1:8000/docs 
 or use file test.postman_collection.json open to postman for test:
